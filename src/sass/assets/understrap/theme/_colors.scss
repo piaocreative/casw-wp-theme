@@ -1,0 +1,24 @@
+@use "sass:map";
+
+$merged-colors: map.merge($colors, $theme-colors);
+
+@each $name, $color in $merged-colors {
+
+	.has-#{$name}-color,
+	.has-#{$name}-color:visited {
+		color: $color;
+	}
+	.has-#{$name}-background-color {
+		background-color: $color;
+		border-color: $color;
+	}
+
+
+	.wp-block-button:hover{
+		.wp-block-button__link.has-white-background-color.has-#{$name}-color {
+			& {
+				color: $color;
+			}
+		}
+	}
+}

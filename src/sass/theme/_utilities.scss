@@ -1,0 +1,255 @@
+// Main colors
+.bg-blue {
+	background-color: $blue;
+}
+
+.bg-indigo {
+	background-color: $indigo;
+}
+
+.bg-green {
+	background-color: $green;
+}
+
+.bg-orange {
+	background-color: $orange;
+}
+
+.bg-cyan {
+	background-color: $cyan;
+}
+
+.text-blue {
+	color: $blue;
+}
+
+.text-indigo {
+	color: $indigo;
+}
+
+.text-green {
+	color: $green;
+}
+
+.text-orange {
+	color: $orange;
+}
+
+.text-cyan {
+	color: $cyan;
+}
+
+
+// Search Filters
+.searchandfilter {
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        @include media-breakpoint-down(lg) {
+            flex-direction: column;
+            gap: 0;
+
+            li {
+                width: 100%;
+                text-align: center;
+
+                label {
+                    width: 100%;
+                }
+            }
+        }
+
+        li {
+            label {
+                position: relative;
+            }
+
+            &[data-sf-field-type="search"] {
+                label::after {
+                    content: "";
+                    background-image: escape-svg(url('data:image/svg+xml,<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.031 14.617L20.314 18.899L18.899 20.314L14.617 16.031C13.0237 17.3082 11.042 18.0029 9 18C4.032 18 0 13.968 0 9C0 4.032 4.032 0 9 0C13.968 0 18 4.032 18 9C18.0029 11.042 17.3082 13.0237 16.031 14.617ZM14.025 13.875C15.2941 12.5699 16.0029 10.8204 16 9C16 5.133 12.867 2 9 2C5.133 2 2 5.133 2 9C2 12.867 5.133 16 9 16C10.8204 16.0029 12.5699 15.2941 13.875 14.025L14.025 13.875Z" fill="#6F2294"/></svg>'));
+                    background-size: 100%;
+                    position: absolute;
+                    left: 1.1875rem;
+                    top: 1rem;
+                    display: block;
+                    width: 1.3125rem;
+                    height: 1.3125rem;
+                }
+
+                .sf-input-text {
+                    padding-left: 3.375rem;
+                }
+            }
+
+            &[data-sf-field-input-type="select"] {
+                label::after {
+                    content: "";
+                    background-image: escape-svg(url('data:image/svg+xml,<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.575 6.85278C5.44167 6.85278 5.31233 6.82917 5.187 6.78195C5.06167 6.73473 4.95767 6.67176 4.875 6.59306L0.275 2.24862C0.0916663 2.07547 0 1.8551 0 1.5875C0 1.31991 0.0916663 1.09954 0.275 0.926394C0.458333 0.753245 0.691667 0.666672 0.975 0.666672C1.25833 0.666672 1.49167 0.753245 1.675 0.926394L5.575 4.60973L9.475 0.926394C9.65833 0.753245 9.89167 0.666672 10.175 0.666672C10.4583 0.666672 10.6917 0.753245 10.875 0.926394C11.0583 1.09954 11.15 1.31991 11.15 1.5875C11.15 1.8551 11.0583 2.07547 10.875 2.24862L6.275 6.59306C6.175 6.6875 6.06667 6.75456 5.95 6.79423C5.83333 6.83389 5.70833 6.85341 5.575 6.85278Z" fill="#6F2294"/></svg>'));
+                    background-size: 100%;
+                    position: absolute;
+                    right: 1.375rem;
+                    top: 1.375rem;
+                    display: block;
+                    width: 0.75rem;
+                    height: 0.4375rem;
+                }
+            }
+        }
+
+        .sf-field-submit,
+        .sf-field-reset {
+            [type=submit] {
+                @extend .btn;
+                @extend .btn-secondary;
+
+            }
+        }
+    }
+
+    .sf-input-text,
+    .sf-input-select {
+        @extend .form-control;
+    }
+}
+
+
+// View Options
+.view-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+
+    a {
+        color: $gray-700;
+        font-weight: 600;
+        font-size: 0.75rem;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        .icon {
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 1rem;
+            height: 1rem;
+            display: block;
+            margin-right: 0.625rem;
+        }
+
+        .card-view-icon {
+            background-image: escape-svg(url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="7" height="7" fill="#{$gray-700}"/><rect x="9" width="7" height="7" fill="#{$gray-700}"/><rect y="9" width="7" height="7" fill="#{$gray-700}"/><rect x="9" y="9" width="7" height="7" fill="#{$gray-700}"/></svg>'));
+        }
+
+        .list-view-icon {
+            background-image: escape-svg(url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="16" height="3.2" fill="#{$gray-700}"/><rect y="6.40039" width="16" height="3.2" fill="#{$gray-700}"/><rect y="12.7998" width="16" height="3.2" fill="#{$gray-700}"/></svg>'));
+        }
+
+        &:hover,
+        &.active {
+            color: $secondary;
+
+            .card-view-icon {
+                background-image: escape-svg(url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="7" height="7" fill="#{$secondary}"/><rect x="9" width="7" height="7" fill="#{$secondary}"/><rect y="9" width="7" height="7" fill="#{$secondary}"/><rect x="9" y="9" width="7" height="7" fill="#{$secondary}"/></svg>'));
+            }
+
+            .list-view-icon {
+                background-image: escape-svg(url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="16" height="3.2" fill="#{$secondary}"/><rect y="6.40039" width="16" height="3.2" fill="#{$secondary}"/><rect y="12.7998" width="16" height="3.2" fill="#{$secondary}"/></svg>'));
+            }
+        }
+    }
+}
+
+.search-filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media-breakpoint-down(xl) {
+        flex-direction: column;
+
+        form {
+            width: 100%;
+        }
+    }
+
+    .view-options {
+        margin-left: 1.25rem;
+        min-width: 5.25rem;
+        // flex: 1 0 auto;
+
+        @include media-breakpoint-down(xl) {
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            margin-left: 0;
+            margin-top: 1.25rem;
+        }
+    }
+}
+
+
+// Gravity Form
+.form-wrapper {
+    background-color: $white;
+    border-radius: 0.5rem;
+    // padding: 0.375rem;
+    max-width: 26.25rem;
+    width: 100%;
+
+    .gform_wrapper.gravity-theme {
+        .gform-body {
+            padding: 0.375rem;
+        }
+
+        .gform_fields {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .gfield_label {
+            display: none;
+        }
+
+        .gfield {
+            input[type=email] {
+                @extend .form-control;
+
+                border: none;
+                padding: 0.75rem 1rem;
+
+                &:focus {
+                    border: none;
+                    box-shadow: none;
+                }
+            }
+
+            input[type=submit] {
+                @extend .btn;
+                @extend .btn-secondary;
+            
+                border: none;
+                padding: 1rem 1.375rem;
+            }
+        }
+
+        .gform_footer, .gform_page_footer {
+            display: none;
+        }
+    }
+    
+    .confirmation-message {
+        color: $secondary;
+        font-size: 0.75rem;
+        padding-bottom: 0.375rem;
+        text-align: center;
+    }
+}

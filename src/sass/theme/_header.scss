@@ -1,0 +1,59 @@
+#wrapper-navbar {
+    background-color: $white;
+
+    #main-nav {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        #main-menu {
+            align-items: center;
+            margin-left: auto;
+            margin-right: 38px;
+        }
+
+        .container-fluid {
+            padding-left: 4.5rem;
+            padding-right: 4.5rem;
+        }
+
+        .navbar-brand {
+            min-width: 7.5rem;
+            flex: 1 0 auto;
+        }
+
+        .nav-link {
+            padding: 0;
+        }
+
+        li {
+            padding-left: 30px;
+            padding-right: 30px;
+            border-right: 2px solid #D6D6D6;
+        }
+
+        li:first-child {
+            padding-left: 0;
+        }
+
+        li:last-child, .last-child {
+            border: none;
+        }
+
+        .btn.btn-secondary .nav-link {
+            color: $white;
+        }
+
+        @media (max-width: 1200px) {
+            li {
+                padding-left: 30px !important;
+                padding-right: 30px;
+                margin-top: 8px;
+                border: none;
+            }
+        }
+    }
+    
+    .navbar-toggler {
+        border: 2px solid $secondary;
+    }
+}

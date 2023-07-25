@@ -1,0 +1,71 @@
+{
+  "name": "understrap-child",
+  "version": "1.2.0",
+  "description": "Basic Child Theme for Understrap Theme Framework: https://github.com/understrap/understrap",
+  "main": "index.js",
+  "scripts": {
+    "bs": "browser-sync start --config src/build/browser-sync.config.js",
+    "css": "npm-run-all css-compile css-postcss css-minify",
+    "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css --quiet src/sass/child-theme.scss:css/child-theme.css src/sass/custom-editor-style.scss:css/custom-editor-style.css",
+    "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output css/ --batch --batch-suffix \".min\" \"css/*.css\" \"!css/*.min.css\" \"!css/*rtl*.css\"",
+    "css-postcss": "postcss --config src/build/postcss.config.js --replace \"css/*.css\" \"!css/*.rtl*.css\" \"!css/*.min.css\"",
+    "js": "npm-run-all js-compile js-minify",
+    "js-compile": "rollup --config src/build/rollup.config.js --sourcemap",
+    "js-minify": "terser js/child-theme.min.js --config-file src/build/terser.config.json --source-map \"content=js/child-theme.js.map,url=child-theme.min.js.map,filename=child-theme.min.js\" --output js/child-theme.min.js",
+    "watch": "npm-run-all --parallel watch-run-*",
+    "watch-bs": "npm-run-all --parallel bs watch-run-*",
+    "watch-run-css": "nodemon --watch src/sass/ --ext scss --exec \"npm-run-all css\"",
+    "watch-run-js": "nodemon --watch src/js/ --ext js --exec \"npm-run-all js\"",
+    "copy-assets": "node src/build/copy-assets.js",
+    "dist": "npm-run-all --parallel css js",
+    "dist-build": "node src/build/dist-build.js",
+    "dist-clean": "node src/build/dist-clean.js"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/understrap/understrap-child.git"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "framework",
+    "bootstrap",
+    "underscores"
+  ],
+  "author": "The Understrap Authors (https://github.com/understrap/understrap/graphs/contributors)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/understrap/understrap-child/issues"
+  },
+  "homepage": "https://understrap.com",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4",
+    "@popperjs/core": "^2.11.6",
+    "@rollup/plugin-babel": "^6.0.2",
+    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-multi-entry": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-replace": "^5.0.1",
+    "autoprefixer": "^10.4.13",
+    "bootstrap": "^5.2.2",
+    "browser-sync": "^2.27.10",
+    "browserslist": "^4.21.4",
+    "caniuse-lite": "^1.0.30001430",
+    "clean-css-cli": "^5.6.1",
+    "font-awesome": "^4.7.0",
+    "nodemon": "^2.0.20",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.18",
+    "postcss-cli": "^10.0.0",
+    "postcss-understrap-palette-generator": "git+https://github.com/understrap/postcss-understrap-palette-generator.git",
+    "rollup": "^3.2.5",
+    "sass": "^1.56.0",
+    "terser": "^5.15.1",
+    "understrap": "github:understrap/understrap#develop"
+  }
+}

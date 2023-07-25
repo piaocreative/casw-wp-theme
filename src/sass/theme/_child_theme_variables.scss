@@ -1,0 +1,82 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from src/sass/assets/bootstrap5/_variables.scss, paste it here and edit the value.
+
+// casw theme color
+$blue:                          #1C3D6F;
+$indigo:                        #6F2294;
+$green:                         #7BBE1E;
+$orange:                        #F55600;
+$cyan:                          #28BDC7;
+
+$primary:                       $blue;
+$secondary:                     $indigo;
+$warning:                       $orange;
+
+$light:                         #E1E1E1;
+$gray-500:                      #E8E8E8;
+$gray-600:                      #555555;
+$gray-700:                      #C8C8C8;
+$gray-800:                      #2E2E2E;
+$dark:                          #555555;
+
+$body-color:                    $gray-800;
+
+$grid-gutter-width:             3.375rem;
+// $paragraph-margin-bottom:       2.5rem;
+
+// Typography
+$font-family-base:              'Roboto', sans-serif;
+$font-size-base:                1.125rem;
+$line-height-base:              1.7;
+
+$h1-font-size:                  3.25rem;
+$h2-font-size:                  2.5rem;
+$h3-font-size:                  1.5rem;
+$h4-font-size:                  1.25rem;
+$h5-font-size:                  1rem;
+$h6-font-size:                  0.875rem;
+
+$headings-font-family:          'Roboto', sans-serif;
+$headings-font-weight:          600;
+$headings-line-height:          104.3%;
+$headings-margin-bottom:        1.875rem;
+
+$border-color:                  #E1E1E1;
+
+$link-color:                    $indigo;
+$link-hover-color:              $cyan;
+
+// input
+$input-btn-padding-y:           1rem;
+$input-btn-padding-x:           1.75rem;
+$input-btn-font-family:         'Roboto', sans-serif;
+$input-btn-font-size:           1.125rem;
+$input-btn-line-height:         1;
+$input-btn-border-width:        2px;
+
+// button
+$btn-color:                     #ffffff;
+$btn-box-shadow:                none;
+$btn-font-weight:               600;
+$btn-active-border:             none;
+$btn-border-width:              1.3px;
+$border-radius:                 0.5rem;
+
+// accordion
+$accordion-color:               $secondary;
+$accordion-border-width:        0;
+$accordion-border-color:        $warning;
+
+// input
+$input-placeholder-color:       rgba(30, 30, 30, 0.5);
+
+// Navbar
+$navbar-light-color:            $gray-800;
+$navbar-toggler-focus-width:    1px;
+$navbar-nav-link-padding-x:     1.4375rem;
+$navbar-light-icon-color:       $indigo;
+$navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-icon-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+
+// Navs
+$nav-link-padding-x:            1.1875rem;
